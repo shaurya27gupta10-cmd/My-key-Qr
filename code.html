@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keshav Chabi Workshop - Vehicle Key Making Shop</title>
+    <meta name="description" content="Keshav Chabi Workshop - Professional Vehicle Key Making Shop in Pandriya Kabirdham. Expert key cutting, programming & duplication services.">
+    <meta name="keywords" content="vehicle key making, car key, bike key, key cutting, Pandriya, Kabirdham, Chhattisgarh">
+    <meta property="og:title" content="Keshav Chabi Workshop">
+    <meta property="og:description" content="Vehicle Key Making Shop - Pandriya Kabirdham">
+    <meta property="og:image" content="https://i.ibb.co/fzjSGKf0/logo.png">
+    <meta property="og:url" content="https://keshavchabiworkshop.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/fzjSGKf0/logo.png">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #E3F2FD 0%, #FFFFFF 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #212529;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(92, 124, 250, 0.15);
+            border: 1px solid rgba(92, 124, 250, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(92, 124, 250, 0.25);
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%235C7CFA'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 5l7 7-7 7'/%3E%3C/svg%3E") no-repeat center;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover::before {
+            transform: translateY(-50%) translateX(4px);
+        }
+        
+        .welcome-card {
+            text-align: center;
+            cursor: default;
+        }
+        
+        .welcome-card::before {
+            display: none;
+        }
+        
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #5C7CFA;
+            box-shadow: 0 0 30px rgba(92, 124, 250, 0.4);
+            animation: logoGlow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes logoGlow {
+            from { box-shadow: 0 0 30px rgba(92, 124, 250, 0.4); }
+            to { box-shadow: 0 0 40px rgba(92, 124, 250, 0.6), 0 0 60px rgba(92, 124, 250, 0.3); }
+        }
+        
+        .h1 {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #5C7CFA, #4C6EF5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #6C757D;
+            font-weight: 500;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #4C6EF5, #3B5BDB);
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(76, 110, 245, 0.4);
+        }
+        
+        .btn-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+        
+        .social-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .social-card {
+            padding: 20px !important;
+            text-align: center;
+        }
+        
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 12px;
+        }
+        
+        .contact-info {
+            text-align: center;
+        }
+        
+        .owner-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 16px;
+        }
+        
+        .address {
+            font-size: 14px;
+            color: #6C757D;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+        }
+        
+        .floating-menu {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            width: 56px;
+            height: 56px;
+            background: #5C7CFA;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(92, 124, 250, 0.4);
+            z-index: 1000;
+            cursor: pointer;
+        }
+        
+        .menu-dots {
+            width: 20px;
+            height: 4px;
+            background: white;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .menu-dots::before,
+        .menu-dots::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 4px;
+            background: white;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .menu-dots::before { top: -8px; }
+        .menu-dots::after { top: 8px; }
+        
+        /* Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .fade-in-up:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in-up:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in-up:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in-up:nth-child(4) { animation-delay: 0.4s; }
+        .fade-in-up:nth-child(5) { animation-delay: 0.5s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 480px) {
+            .container {
+                padding: 16px;
+            }
+            
+            .card {
+                padding: 20px;
+                margin-bottom: 16px;
+            }
+            
+            .h1 {
+                font-size: 24px;
+            }
+            
+            .floating-whatsapp,
+            .floating-menu {
+                bottom: 20px;
+            }
+            
+            .floating-whatsapp {
+                right: 20px;
+                width: 56px;
+                height: 56px;
+            }
+            
+            .floating-menu {
+                left: 20px;
+                width: 52px;
+                height: 52px;
+            }
+        }
+        
+        /* Share Sheet */
+        @media (max-width: 768px) {
+            .share-sheet {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: white;
+                border-radius: 20px 20px 0 0;
+                padding: 24px;
+                transform: translateY(100%);
+                transition: transform 0.3s ease;
+                z-index: 2000;
+            }
+            
+            .share-sheet.active {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Section -->
+        <div class="card welcome-card fade-in-up">
+            <div class="logo-container">
+                <img src="https://i.ibb.co/fzjSGKf0/logo.png" alt="Keshav Chabi Workshop Logo" class="logo">
+            </div>
+            <h1 class="h1">Welcome to Keshav Chabi Workshop</h1>
+            <p class="subtitle">Vehicle Key Making Shop</p>
+        </div>
+        
+        <!-- Catalogue Button -->
+        <a href="https://wa.me/c/916268861262" class="card fade-in-up btn" id="catalogue-btn">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.238 4.423a15.829 15.829 0 0 0-3.2-.887C15.37 3.071 14.92 3 12 3a9 9 0 0 0-9 9c0 2.3.75 4.424 2.015 6.13L3 20l3.55-1.757A9.023 9.023 0 0 0 12 21a9 9 0 0 0 8.238-5.577c.6-.99.916-2.14.916-3.423s-.316-2.433-.916-3.423zM7.001 17.143c-.449.449-1.217.449-1.666 0s-.449-1.217 0-1.666l1.133-1.133c.449-.449 1.217-.449 1.666 0s.449 1.217 0 1.666l-1.133 1.133zm9.762-8.352c-.449-.449-1.217-.449-1.666 0l-3.309 3.309-1.733-1.733c-.449-.449-1.217-.449-1.666 0s-.449 1.217 0 1.666l2.133 2.133c.224.224.512.336.8.336s.576-.112.8-.336l3.666-3.666c.45-.449.45-1.217 0-1.666z"/>
+            </svg>
+            View Catalogue
+        </a>
+        
+        <!-- Social Media Section -->
+        <div class="card fade-in-up" style="cursor: default;">
+            <h3 style="margin-bottom: 20px; color: #212529; font-size: 20px; font-weight: 700;">Follow Us</h3>
+            <div class="social-grid">
+                <a href="https://www.instagram.com/keshav_chabiworkshop" class="social-card" id="instagram-btn">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.621 5.367 11.988 11.988 11.988s11.988-5.367 11.988-11.988C23.996 5.367 18.63.001 12.017.001zM7.998 18.731c-1.653 0-2.994-1.342-2.994-2.993 0-1.651 1.341-2.993 2.994-2.993s2.994 1.342 2.994 2.993a2.998 2.998 0 0 1-2.994 2.993zM17.982 18.731a4.982 4.982 0 0 1-4.982-4.982c0-2.745 2.237-4.982 4.982-4.982s4.982 2.237 4.982 4.982a4.982 4.982 0 0 1-4.982 4.982zM20.207 7.26c-.835 0-1.512-.677-1.512-1.512s.677-1.512 1.512-1.512c.835 0 1.512.677 1.512 1.512s-.677 1.512-1.512 1.512z"/>
+                    </svg>
+                    <div style="font-weight: 600; color: #212529;">Instagram</div>
+                </a>
+                <a href="https://www.youtube.com/@keshavchabiworkshop" class="social-card" id="youtube-btn">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                    <div style="font-weight: 600; color: #212529;">YouTube</div>
+                </a>
+                <a href="https://g.page/r/CcdYMsU52BbZEBE/review" class="social-card" id="review-btn">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6.667 0A2.667 2.667 0 0 0 4 2.667v18.666A2.667 2.667 0 0 0 6.667 24h10.666a2.667 2.667 0 0 0 2.667-2.667V2.667A2.667 2.667 0 0 0 17.333 0H6.667zm10.66 18H6.667V2.667h10.66V18z"/>
+                    </svg>
+                    <div style="font-weight: 600; color: #212529;">Reviews</div>
+                </a>
+                <a href="https://maps.app.goo.gl/bFZumD9KBGSREuNQ9?g_st=awb" class="social-card" id="map-btn">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M12.026 0c-5.525 0-10 4.475-10 10 0 6.012 7.988 15.127 8.358 15.386a.75.75 0 0 0 1.06 0c.37-.259 8.357-9.375 8.357-15.386 0-5.525-4.475-10-10-10zm0 19.112c-.812-.813-6.45-6.262-6.719-9.112a7.5 7.5 0 1 1 13.438 0c-.269 2.85-5.907 8.299-6.719 9.112zM12.026 5a7.026 7.026 0 1 0 0 14.052A7.026 7.026 0 0 0 12.026 5z"/>
+                    </svg>
+                    <div style="font-weight: 600; color: #212529;">Location</div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="card fade-in-up">
+            <div class="contact-info">
+                <div class="owner-name">Vinod Gupta</div>
+                <div class="address">TV tower ke pass tahsil office road<br>bairagpara Pandriya kabirdham<br>491559 chhattisgarh</div>
+            </div>
+        </div>
+        
+        <!-- Call & WhatsApp Buttons -->
+        <a href="tel:+919893216520" class="card fade-in-up btn" id="call-btn">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            Call Now
+        </a>
+        
+        <a href="https://wa.me/919893216520" class="card fade-in-up btn" id="whatsapp-btn">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.885 3.488"/>
+            </svg>
+            WhatsApp
+        </a>
+        
+        <!-- Save Contact Button -->
+        <button class="card fade-in-up btn" id="save-contact-btn">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 1L3 5v6c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V5l-9-4zM11 17H9v-4h2v4zm0-6H9V7h2v4z"/>
+            </svg>
+            Save Contact
+        </button>
+        
+        <!-- Share Button -->
+        <button class="card fade-in-up btn" id="share-btn">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+            </svg>
+            Share
+        </button>
+    </div>
+    
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/919893216520" class="floating-whatsapp" id="floating-whatsapp" title="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.885 3.488"/>
+        </svg>
+    </a>
+    
+    <!-- Floating Menu -->
+    <div class="floating-menu" id="floating-menu">
+        <div class="menu-dots"></div>
+    </div>
+    
+    <script>
+        // Track button clicks with Google Analytics
+        function trackEvent(eventName) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, {
+                    event_category: 'button_click',
+                    event_label: window.location.hostname
+                });
+            }
+            console.log('Tracked:', eventName);
+        }
+        
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Catalogue
+            document.getElementById('catalogue-btn').addEventListener('click', function(e) {
+                trackEvent('catalogue_click');
+            });
+            
+            // Social
+            document.getElementById('instagram-btn').addEventListener('click', function(e) {
+                trackEvent('instagram_click');
+            });
+            
+            document.getElementById('youtube-btn').addEventListener('click', function(e) {
+                trackEvent('youtube_click');
+            });
+            
+            document.getElementById('whatsapp-btn').addEventListener('click', function(e) {
+                trackEvent('whatsapp_click');
+            });
+            
+            document.getElementById('review-btn').addEventListener('click', function(e) {
+                trackEvent('review_click');
+            });
+            
+            document.getElementById('map-btn').addEventListener('click', function(e) {
+                trackEvent('map_click');
+            });
+            
+            // Contact
+            document.getElementById('call-btn').addEventListener('click', function(e) {
+                trackEvent('call_click');
+            });
+            
+            // Save Contact
+            document.getElementById('save-contact-btn').addEventListener('click', function(e) {
+                trackEvent('save_contact_click');
+                saveContact();
+            });
+            
+            // Share
+            document.getElementById('share-btn').addEventListener('click', function(e) {
+                trackEvent('share_click');
+                shareContent();
+            });
+            
+            // Floating WhatsApp
+            document.getElementById('floating-whatsapp').addEventListener('click', function(e) {
+                trackEvent('whatsapp_click');
+            });
+        });
+        
+        // Save Contact as VCF
+        function saveContact() {
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+N:Gupta;Vinod;;
+FN:Vinod Gupta
+ORG:Keshav Chabi Workshop
+TEL;TYPE=CELL:+919893216520
+ADR;TYPE=WORK:;;TV tower ke pass tahsil office road\\nbairagpara Pandriya kabirdham;Chhattisgarh;;491559;India
+END:VCARD`;
+            
+            const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Keshav-Chabi-Workshop.vcf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        
+        // Web Share API
+        function shareContent() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Keshav Chabi Workshop',
+                    text: 'Vehicle Key Making Shop - Pandriya Kabirdham',
+                    url: window.location.href
+                }).catch(console.error);
+            } else {
+                // Fallback: Copy to clipboard
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('Link copied to clipboard!');
+                });
+            }
+        }
+        
+        // Floating menu functionality (placeholder)
+        document.getElementById('floating-menu').addEventListener('click', function() {
+            alert('More options coming soon!');
+        });
+    </script>
+</body>
+</html>
